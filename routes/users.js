@@ -52,9 +52,17 @@ router.put("/:email", (req, res) => {
   if (filtered_users.length > 0) {
     let filtered_user = filtered_users[0];
     let DOB = req.query.DOB;
+    let firstName = req.query.firstName;
+    let lastName = req.query.lastName;
     //if the DOB has changed
     if (DOB) {
       filtered_user.DOB = DOB
+    }
+    if (firstName) {
+      filtered_user.firstName = firstName
+    }
+    if (lastName) {
+      filtered_user.lastName = lastName
     }
     /*
     Include code here similar to the one above for other attibutes
